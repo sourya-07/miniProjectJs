@@ -40,10 +40,25 @@
         
         ">✌️</button>
 
+        <button onclick="
+            score.wins = 0;
+            score.losses = 0;
+            score.ties = 0;
+
+            alert(`Scores reset! Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
+        ">🔁</button>
+
     </div>
 
 
     <script>
+
+        const score = {
+            wins: 0,
+            losses: 0,
+            ties: 0,
+        };
+
 
         function playGame(playerMove) {
             const computerMove = pickComputer();
@@ -60,7 +75,17 @@
                     result = 'Tie'
                 }
 
-                alert(`You picked ${playerMove}. Compuer picked ${computerMove}. ${result}`);
+                if (result === 'You Win') {
+                    score.wins = score.wins + 1;
+
+                } else if (result === 'You Lose') {
+                    score.losses = score.losses + 1;
+                } else if (result === 'Tie') {
+                    score.ties = score.ties + 1;
+                }
+                alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+
+
             } else if (playerMove === 'Paper') {
                 if (computerMove === 'Rock') {
                     result = 'You Win'
@@ -70,7 +95,15 @@
                     result = 'You Lose'
                 }
 
-                alert(`You picked Paper. Compuer picked ${computerMove}. ${result}`);
+                if (result === 'You Win') {
+                    score.wins = score.wins + 1;
+
+                } else if (result === 'You Lose') {
+                    score.losses = score.losses + 1;
+                } else if (result === 'Tie') {
+                    score.ties = score.ties + 1;
+                }
+                alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 
             } else if (playerMove === 'Rock') {
                 if (computerMove === 'Rock') {
@@ -81,13 +114,20 @@
                     result = 'You Win'
                 }
 
-                alert(`You picked rock. Compuer picked ${computerMove}. ${result}`);
+
+                if (result === 'You Win') {
+                    score.wins = score.wins + 1;
+
+                } else if (result === 'You Lose') {
+                    score.losses = score.losses + 1;
+                } else if (result === 'Tie') {
+                    score.ties = score.ties + 1;
+                }
+                alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+                
             }
 
         }
-
-
-
 
 
 
@@ -104,6 +144,7 @@
             }
             return computerMove;
         }
+        
 
     </script>
 </body>
