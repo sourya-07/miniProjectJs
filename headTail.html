@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toss</title>
+    <style>
+        button {
+            width: 100px;
+            height: 100px;
+            font-size: 30px;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button onclick="
+            const toss = Math.random();
+            let coin = ''
+            if (toss < 0.5) {
+                alert('Heads');
+            } else if (toss > 0.5) {
+                alert('Tails');
+            }
+            
+
+        ">Head</button>
+        
+        <button onclick="
+            const toss = Math.random();
+            if (toss < 0.5) {
+                alert('Heads');
+            } else if (toss > 0.5) {
+                alert('Tails');
+            }
+        ">Tail</button>
+    </p>
+
+    <script>
+        
+    </script>
+</body>
+</html>
