@@ -51,6 +51,9 @@
         
         ">✌️</button>
 
+
+        <p class="js-result"></p>
+        <p class="js-moves"></p>
         <p class="js-score"></p>
 
         <button onclick="
@@ -87,6 +90,10 @@
             losses: 0,
             ties: 0,
         };
+
+        document.querySelector('.js-result').innerHTML = result;
+
+        document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} computer`
 
         // document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
         updateScoreElement()
@@ -130,6 +137,10 @@
 
                 localStorage.setItem('score', JSON.stringify(score));
 
+                document.querySelector('.js-result').innerHTML = result;
+        
+                document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} computer`
+
                 // document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
                 updateScoreElement()
 
@@ -157,8 +168,12 @@
 
                 localStorage.setItem('score', JSON.stringify(score));
 
+                document.querySelector('.js-result').innerHTML = result;
+        
+                document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} computer`
+
                 // document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-                updateScoreElement()
+                
 
                 // alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 
@@ -182,6 +197,10 @@
                 }
 
                 localStorage.setItem('score', JSON.stringify(score));
+
+                document.querySelector('.js-result').innerHTML = result;
+        
+                document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} computer`
 
                 document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 
