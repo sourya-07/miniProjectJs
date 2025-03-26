@@ -18,13 +18,15 @@
         h1 {
             text-align: center;
         }
+        /*
         div {
             display: flex;
             justify-content: center;
             align-items: center;
 
         }
-        
+        */
+
     </style>
 </head>
 
@@ -49,6 +51,8 @@
         
         ">✌️</button>
 
+        <p class="js-score"></p>
+
         <button onclick="
             score.wins = 0;
             score.losses = 0;
@@ -56,13 +60,20 @@
 
             localStorage.removeItem('score');
 
-            alert(`Scores reset! Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
+            // document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+            updateScoreElement()
+
+            // alert(`Scores reset! Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
         ">🔁</button>
 
     </div>
 
 
     <script>
+
+        function updateScoreElement() {
+            document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+        }
         /*
         const score = {
             wins: 0,
@@ -77,6 +88,8 @@
             ties: 0,
         };
 
+        // document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+        updateScoreElement()
 
         /*
         if (score === null) {
@@ -117,8 +130,11 @@
 
                 localStorage.setItem('score', JSON.stringify(score));
 
+                // document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+                updateScoreElement()
 
-                alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+
+                // alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 
 
             } else if (playerMove === 'Paper') {
@@ -141,8 +157,10 @@
 
                 localStorage.setItem('score', JSON.stringify(score));
 
+                // document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+                updateScoreElement()
 
-                alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+                // alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 
             } else if (playerMove === 'Rock') {
                 if (computerMove === 'Rock') {
@@ -165,7 +183,9 @@
 
                 localStorage.setItem('score', JSON.stringify(score));
 
-                alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+                document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+
+                // alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
                 
             }
 
