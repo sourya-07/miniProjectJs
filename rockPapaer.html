@@ -53,11 +53,18 @@
 
     <script>
 
+        /*
         const score = {
             wins: 0,
             losses: 0,
             ties: 0,
         };
+        */
+
+        const score = JSON.parse(localStorage.getItem('score'));
+
+       //console.log(JSON.parse(localStorage.getItem('score')));
+
 
 
         function playGame(playerMove) {
@@ -83,6 +90,10 @@
                 } else if (result === 'Tie') {
                     score.ties = score.ties + 1;
                 }
+
+                localStorage.setItem('score', JSON.stringify(score));
+
+
                 alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 
 
@@ -103,6 +114,10 @@
                 } else if (result === 'Tie') {
                     score.ties = score.ties + 1;
                 }
+
+                localStorage.setItem('score', JSON.stringify(score));
+
+
                 alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 
             } else if (playerMove === 'Rock') {
@@ -123,6 +138,9 @@
                 } else if (result === 'Tie') {
                     score.ties = score.ties + 1;
                 }
+
+                localStorage.setItem('score', JSON.stringify(score));
+
                 alert(`You picked rock. Compuer picked ${computerMove}. ${result} Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
                 
             }
