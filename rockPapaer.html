@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
     <style>
+        body {
+            background-color: black;
+        }
         button {
             margin: 10px;
             padding: 10px;
@@ -14,18 +17,15 @@
             font-size: 50px;
             background-color: black;
             border-radius: 50%;
+            border: 2px white solid;
         }
         h1 {
-            text-align: center;
+            color: white;
         }
-        /*
-        div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
+        .tracker {
+            color: white;
         }
-        */
+        
 
     </style>
 </head>
@@ -52,9 +52,9 @@
         ">✌️</button>
 
 
-        <p class="js-result"></p>
-        <p class="js-moves"></p>
-        <p class="js-score"></p>
+        <p class="js-result tracker"></p>
+        <p class="js-moves tracker"></p>
+        <p class="js-score tracker"></p>
 
         <button onclick="
             score.wins = 0;
