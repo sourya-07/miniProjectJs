@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .calculate-button {
+            background-color: green;
+            color: white;
+            border: 15px;
+            font-size: 15px;
+            padding: 12px 50px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <h1>Amazon Shipping calculator</h1>
@@ -12,7 +22,7 @@
         handleCostKeydown(event)
     ">
 <!-- onkeydown is for keydown event -->
-    <button onclick="
+    <button class="calculate-button" onclick=" 
         CalculateTotal()
     ">Calculate</button>
 
