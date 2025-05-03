@@ -1,17 +1,17 @@
 let todoList = [{
     name: 'Workout',
-    duedate: '2023-10-01',},
-    
+    duedate: '2023-10-01',
+},
+
 ]
 
 
-
 renderTodoList();
-function renderTodoList(){
+function renderTodoList() {
     let todoListHTML = '';
 
     todoList.forEach((todoObject, index) => {
-        const{ name, duedate } = todoObject;
+        const { name, duedate } = todoObject;
         const html = `
         <div>${name}</div>
         <div>${duedate}</div>
@@ -22,8 +22,8 @@ function renderTodoList(){
         `;
         todoListHTML += html;
     });
-    
-    
+
+
     /*
     for (let i = 0; i < todoList.length; i++) {
 
@@ -42,10 +42,10 @@ function renderTodoList(){
         todoListHTML += html;
 
     }
-    */   
+    */
 
     // console.log(todoListHTML);
-    
+
     document.querySelector('.js-todo-list').innerHTML = todoListHTML;
     const deleteButtons = document.querySelectorAll('.js-delete-todo-button');
     deleteButtons.forEach(button => {
@@ -57,12 +57,12 @@ function renderTodoList(){
             todoList.splice(index, 1);
             renderTodoList();
         });
-})
+    })
 
-document.querySelector('.js-add-todo-button')
-.addEventListener('click', () => {
-    addTodo();
-})
+    document.querySelector('.js-add-todo-button')
+        .addEventListener('click', () => {
+            addTodo();
+        })
 
 }
 
@@ -87,9 +87,9 @@ function addTodo() {
 
     inputElement.value = '';
     dataInputElement.value = '';
-    
-    renderTodoList(); 
 
-    
+    renderTodoList();
+
+
 
 }
