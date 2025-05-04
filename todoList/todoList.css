@@ -2,7 +2,8 @@ body {
     font-family: Arial;
 
 }
-.todo-grid, 
+
+.todo-grid,
 .todo-input-grid {
     display: grid;
     grid-template-columns: 200px 150px 100px;
@@ -17,14 +18,14 @@ body {
     align-items: stretch;
 }
 
-.name-input, 
+.name-input,
 .due-date-input {
     font-size: 15px;
     padding: 6px;
 }
 
 
-.add-todo-botton{
+.add-todo-botton {
     background-color: green;
     color: white;
     border: none;
